@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+   
+    char string[20], substring[20];
+    int resultado;
+   
+    fgets(string, 20, stdin);
+    fgets(substring, 20, stdin);
+   
+    substring[strlen(substring)-1]='\0';
+   
+    for(int i=0; i<=strlen(string); i++){
+        resultado  = strncmp(string+i, substring, strlen(substring));
+       
+        if(resultado == 0){
+            printf("É substring");
+            break;
+        }
+    }
+   
+    if(resultado != 0){
+        printf("Não é substring");
+    }
+
+    return 0;
+}
